@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Main.css'
 
 const Main = () => {
-
+    const [developers, setDevelopers] = useState([])
+    useEffect(() => {
+        fetch('./fakeData.JSON')
+            .then(res => res.json())
+            .then(data => console.log(data))
+    }, [])
     return (
         <div className="container row mx-auto">
             <div className="dev-gallary col-md-8">
