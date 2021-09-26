@@ -2,7 +2,6 @@ import React from 'react';
 import "./Devcart.css"
 
 const Devcart = (props) => {
-    console.log(props.developer);
     // destructuring
     const { name, img } = props.developer
     return (

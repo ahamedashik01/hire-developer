@@ -4,7 +4,6 @@ import './Cart.css'
 
 const Cart = (props) => {
     const { cart } = props;
-    console.log(props.cart)
     let total = 0;
     // loop
     for (const developer of cart) {
