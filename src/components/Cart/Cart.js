@@ -6,18 +6,18 @@ const Cart = (props) => {
     const { cart } = props;
     console.log(props.cart)
     let total = 0;
+    // loop
     for (const developer of cart) {
         total = total + developer.salary;
     }
     return (
         <div className="border border-3 border-dark p-4 cart">
-            <h1>total added : {props.cart.length}</h1>
-            <p>totat : {total}</p>
+            <h2>Developer hired: {props.cart.length}</h2>
+            <h3 className="fw-bold">Total-cost: {total}</h3>
             {
                 props.cart.map(developer => <Devcart
                     developer={developer}
                 >
-
                 </Devcart>)
             }
         </div>

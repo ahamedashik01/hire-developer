@@ -4,20 +4,22 @@ import Developers from '../Developers/Developers';
 import './Main.css'
 
 const Main = () => {
+    // useState 
     const [developers, setDevelopers] = useState([]);
     const [cart, setCart] = useState([])
+    // useEffect
     useEffect(() => {
         fetch('./fakeData.JSON')
             .then(res => res.json())
             .then(data => setDevelopers(data))
     }, [])
-
+    // EventListener
     const handleCart = developer => {
         const newCart = [...cart, developer];
         setCart(newCart);
     }
     return (
-        <div className="container row mx-auto mt-4">
+        <div className="container row mx-auto my-4">
             <div className="dev-gallary col-md-8">
                 <div className="dev-card-container">
                     {
