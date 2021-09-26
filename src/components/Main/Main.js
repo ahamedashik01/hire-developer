@@ -1,21 +1,37 @@
 import React, { useEffect, useState } from 'react';
+import Cart from '../Cart/Cart';
+import Developers from '../Developers/Developers';
 import './Main.css'
 
 const Main = () => {
-    const [developers, setDevelopers] = useState([])
+    const [developers, setDevelopers] = useState([]);
+    const [cart, setCart] = useState([])
     useEffect(() => {
         fetch('./fakeData.JSON')
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => setDevelopers(data))
     }, [])
-    return (
-        <div className="container row mx-auto">
-            <div className="dev-gallary col-md-8">
-                <h1>Developers</h1>
 
+    const handleCart = developer => {
+        const newCart = [...cart, developer];
+        setCart(newCart);
+    }
+    return (
+        <div className="container row mx-auto mt-4">
+            <div className="dev-gallary col-md-8">
+                <div className="dev-card-container">
+                    {
+                        developers.map(developer => <Developers
+                            key={developer.id}
+                            developer={developer}
+                            handleCart={handleCart}
+                        >
+                        </Developers>)
+                    }
+                </div>
             </div>
             <div className="cart col-md-4 text-center ">
-                <h1>total</h1>
+                <Cart cart={cart}></Cart>
             </div>
         </div>
     );

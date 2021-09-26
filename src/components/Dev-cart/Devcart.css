@@ -1,0 +1,11 @@
+.devcart-container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+.img-box img{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}

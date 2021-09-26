@@ -1,0 +1,25 @@
+.dev-card{
+    border-radius: 10px;
+}
+.dev-img img{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+.dev-info{
+    border-radius: 10px;
+    padding: 5px;
+}
+.btn{
+    font-size: 18px;
+    font-weight: 500;
+    padding: 5px 15px;
+}
+.btn:hover{
+    color: #fffffe;
+}
+.social{
+    color: #977a5b;
+    cursor: pointer;
+}
