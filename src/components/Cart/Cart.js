@@ -12,7 +12,7 @@ const Cart = (props) => {
     return (
         <div className="border border-3 border-dark p-4 cart">
             <h2>Developer hired: {props.cart.length}</h2>
-            <h3 className="fw-bold">Total-cost: {total}</h3>
+            <h3 className="fw-bold">Total-cost: ${total}</h3>
             {
                 props.cart.map(developer => <Devcart
                     developer={developer}
